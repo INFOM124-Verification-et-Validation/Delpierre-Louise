@@ -11,10 +11,10 @@ public class ClydeTest {
     GhostFactory factory= new GhostFactory(SPRITE_STORE);
     Ghost clyde= factory.createClyde();
 
-    @BeforeEach
-    
+    // @BeforeEach
 
-    @Test
+
+    // @Test
 
 
 }
