@@ -15,6 +15,7 @@ class OccupantTest {
 
     /**
      * The unit under test.
+     * The objet square
      */
     private Unit unit;
     private Square square;
