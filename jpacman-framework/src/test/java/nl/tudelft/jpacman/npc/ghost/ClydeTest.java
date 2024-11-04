@@ -10,7 +10,6 @@ import org.junit.jupiter.api.BeforeEach;
 import java.util.List;
 
 public class ClydeTest {
-    // Création d'un clyde
 
     // @BeforeEach
     private List<String> map;
@@ -29,6 +28,4 @@ public class ClydeTest {
     // On peut def la direction vers laquelle regarde Clyde
     // Créer notre level, layout (map), ...
     // En fct de la map, le comportement clyde change
-
-
 }
