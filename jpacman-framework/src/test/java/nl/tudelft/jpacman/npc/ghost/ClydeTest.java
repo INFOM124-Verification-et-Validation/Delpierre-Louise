@@ -42,9 +42,8 @@ public class ClydeTest {
         // création d'un niveau
         level = mapGhost.parceMap(map);
 
-        // Savoir où se trouve Clyde et PacMan sur la map
-
-
+        // Savoir où se trouve Clyde et PacMan sur la map (position)
+        
     }
 
 
