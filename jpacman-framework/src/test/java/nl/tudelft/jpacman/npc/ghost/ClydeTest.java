@@ -11,18 +11,42 @@ import java.util.List;
 
 public class ClydeTest {
 
-    // @BeforeEach
     private List<String> map;
-    private GhostFactory clyde;
-    private LevelFactory level;
+    private GhostFactory creationGhost;
+    private Clyde clyde;
+    private LevelFactory creationlevel;
+    private Level level;
     private GhostMapParser mapGhost;
     private PacManSprites pacMan;
-    private BoardFactory board;
+    private BoardFactory creationboard;
+
+    // @BeforeEach
+    // Initialiser les objets dont nous avons besoin pour faire le niveau et la map
+    void setup () {
+        pacMan = new PacManSprites();
+        creationboard = new BoardFactory(pacMan);
+        creationGhost = new GhostFactory (pacMan);
+        creationlevel = new LevelFactory(pacMan, creationGhost);
+        mapGhost = new GhostMapParser(creationlevel, creationboard, creationGhost);
+
+    }
 
     // @Test
-    void toutDroit () {
-        List<String> map;
+    void testClydeAvanceReculePacMan () {
+        // Création d'une map
+        map = Array.asList(
+            "############",
+            "#P________C#",
+            "############"
+        );
+        // création d'un niveau
+        level = mapGhost.parceMap(map);
+
+        // Savoir où se trouve Clyde et PacMan sur la map
+
+
     }
+
 
     // variable à tester
     // On peut def la direction vers laquelle regarde Clyde
