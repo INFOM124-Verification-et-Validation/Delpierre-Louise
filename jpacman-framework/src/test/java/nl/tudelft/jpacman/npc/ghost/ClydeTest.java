@@ -43,6 +43,10 @@ public class ClydeTest {
         level = mapGhost.parceMap(map);
 
         // Savoir où se trouve Clyde et PacMan sur la map (position)
+        assertNotNull(clyde, "Clyde devrait être présent dans le niveau.");
+        assertNotNull(pacMan, "PacMan devrait être présent dans le niveau.");
+
+        
         
     }
 
