@@ -1,6 +1,7 @@
 package nl.tudelft.jpacman.npc.ghost;
 
 import nl.tudelft.jpacman.board.BoardFactory;
+import nl.tudelft.jpacman.level.Level;
 import nl.tudelft.jpacman.level.LevelFactory;
 import nl.tudelft.jpacman.npc.Ghost;
 import nl.tudelft.jpacman.sprite.PacManSprites;
@@ -8,6 +9,8 @@ import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
 
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class ClydeTest {
 
@@ -34,13 +37,13 @@ public class ClydeTest {
     // @Test
     void testClydeAvanceReculePacMan () {
         // Création d'une map
-        map = Array.asList(
-            "############",
-            "#P________C#",
-            "############"
-        );
+        //map = Array.asList(
+          //  "############",
+            //"#P________C#",
+          //  "############"
+        //);
         // création d'un niveau
-        level = mapGhost.parceMap(map);
+       // level = mapGhost.parceMap(map);
 
         // Savoir où se trouve Clyde et PacMan sur la map (position)
         assertNotNull(clyde, "Clyde devrait être présent dans le niveau.");
