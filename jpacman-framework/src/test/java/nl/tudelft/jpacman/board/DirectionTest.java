@@ -22,6 +22,7 @@ public class DirectionTest {
         assertThat(north.getDeltaY()).isEqualTo(-1);
     }
     //Check the South's direction
+    // Commit sonar
     void testSouth() {
         Direction south = Direction.valueOf("SOUTH");
         assertThat(south.getDeltaY()).isEqualTo(1);
