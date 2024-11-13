@@ -21,34 +21,37 @@ class GildedRose {
 
     public void updateQuality() {
         for (Item item : items) {
-            if (!item.name.equals("Aged Brie") && !item.name.equals(BACKSTAGE)) {
-                decreaseQuality(item);
+            UpdateQualityFactory factory = new UpdateQualityFactory();
+            factory.updateQuality(items);
 
-            } else {
-               increaseQuality(item);
-               if (item.name.equals(BACKSTAGE)) {
-                   if (item.sellIn < 11 && item.quality < 50) {
-                       item.quality = item.quality + 1;
-                   }
-                   if (item.sellIn < 6 && item.quality < 50) {
-                       item.quality = item.quality + 1;
-                   }
-               }
-            }
-            if (!item.name.equals(SULFURAS)) {
-                item.sellIn = item.sellIn - 1;
-            }
-            if (item.sellIn < 0) {
-                if (!item.name.equals("Aged Brie")) {
-                    if (!item.name.equals(BACKSTAGE)) {
-                        decreaseQuality(item);
-                    } else {
-                        item.quality = 0;
-                    }
-                } else {
-                    increaseQuality(item);
-                }
-            }
+//            if (!item.name.equals("Aged Brie") && !item.name.equals(BACKSTAGE)) {
+//                decreaseQuality(item);
+//
+//            } else {
+//               increaseQuality(item);
+//               if (item.name.equals(BACKSTAGE)) {
+//                   if (item.sellIn < 11 && item.quality < 50) {
+//                       item.quality = item.quality + 1;
+//                   }
+//                   if (item.sellIn < 6 && item.quality < 50) {
+//                       item.quality = item.quality + 1;
+//                   }
+//               }
+//            }
+//            if (!item.name.equals(SULFURAS)) {
+//                item.sellIn = item.sellIn - 1;
+//            }
+//            if (item.sellIn < 0) {
+//                if (!item.name.equals("Aged Brie")) {
+//                    if (!item.name.equals(BACKSTAGE)) {
+//                        decreaseQuality(item);
+//                    } else {
+//                        item.quality = 0;
+//                    }
+//                } else {
+//                    increaseQuality(item);
+//                }
+//            }
         }
     }
 }

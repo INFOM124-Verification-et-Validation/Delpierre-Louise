@@ -3,6 +3,7 @@ package com.gildedrose;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class GildedRoseTest {
 
@@ -25,7 +26,7 @@ class GildedRoseTest {
         for (int i = 0; i < 20; i++) {
             app.updateQuality();
             for (Item item : items) {
-                assertEquals(true, item.quality >= 0, "Quality should never be negative");
+                assertTrue(item.quality >= 0, "Quality should never be negative");
             }
         }
     }
@@ -41,10 +42,27 @@ class GildedRoseTest {
         for (int i = 0; i < 20; i++) {
             app.updateQuality();
             for (Item item : items) {
-                assertEquals(true, item.quality <= 50, "Quality should never be more than 50");
+                assertTrue(item.quality <= 50, "Quality should never be more than 50");
             }
         }
     }
+    @Test
+    void nameSulQuality(){
+        Item[] items = new Item [] {
+            new Item("sulfuras", 15, 11),
+            new Item("sulfuras", 10, 0),
+            new Item("sulfuras", 0, 43),
+            new Item("sulfuras", -1, 50)
+        };
+        GildedRose app = new GildedRose(items);
+        for (int i = 0; i < 20; i++) {
+            app.updateQuality();
+            for (Item item : items) {
+                assertTrue(item.quality == 80, "Quality of Sulfuras should never change");
+            }
+        }
+    }
+
 }
 
 
